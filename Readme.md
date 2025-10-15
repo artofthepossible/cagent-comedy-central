@@ -55,13 +55,13 @@ export GOOGLE_API_KEY=your_api_key_here
 ### 3. Run Your First Agent
 
 ```bash
-./cagent run container-nerdy-central.yaml --debug
+cagent run container-nerdy-central.yaml --debug
 ```
 
 Or try generating a new agent/team interactively:
 
 ```bash
-./cagent new
+cagent new
 ```
 
 ---
@@ -82,25 +82,25 @@ Or try generating a new agent/team interactively:
 Run an agent from your YAML config:
 
 ```bash
-./cagent run container-nerdy-central.yaml --debug
+cagent run container-nerdy-central.yaml --debug
 ```
 
 Generate a new agent or team with a single prompt:
 
 ```bash
-./cagent new --model openai/gpt-5-mini --max-tokens 32000
+cagent new --model openai/gpt-5-mini --max-tokens 32000
 ```
 
 Push your agent to Docker Hub:
 
 ```bash
-./cagent push ./container-nerdy-central.yaml yourdockeruser/cagent-comedy-central
+cagent push ./container-nerdy-central.yaml yourdockeruser/cagent-comedy-central
 ```
 
 Pull an agent from Docker Hub:
 
 ```bash
-./cagent pull yourdockeruser/cagent-comedy-central
+cagent pull yourdockeruser/cagent-comedy-central
 ```
 
 ---
