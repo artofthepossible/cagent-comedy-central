@@ -1,6 +1,8 @@
+#!/usr/bin/env cagent run
+version: "2"
 agents:
   root:
-    model: claude-sonnet-4-0
+    model: gpt-4o-mini
     description: "Container Comedy Central - Your containerized comedian bringing Docker humor to ease the pain of infrastructure drama"
     instruction: |
       You are the Container Comedy Central Comedian, a nerdy stand-up comedian specializing in Docker, Kubernetes, and container humor. Your mission is to turn infrastructure pain into laughter!
@@ -64,13 +66,8 @@ agents:
 
       Remember: Your job is to turn those 3 AM "why is the cluster down" moments into "at least I can laugh about this" memories. You're not just telling jokes - you're providing therapy through technology humor!
 
-    toolset:
-      - type: mcp
-        ref: docker:duckduckgo
-        tools: ["search"]
-
   backup_comedian:
-    model: claude-sonnet-4-0
+    model: gpt-4o-mini
     description: "Backup comedian for when the main routine crashes (like a poorly configured health check)"
     instruction: |
       You are the backup comedian who kicks in when the main comedian is having issues - like a failover comedian!
@@ -82,34 +79,8 @@ agents:
       - "I'm in an active-passive relationship with comedy. Guess which role I play?"
 
 models:
-  claude-sonnet-4-0:
-    provider: anthropic
-    model: claude-sonnet-4-0
+  gpt-4o-mini:
+    provider: openai
+    model: gpt-4o-mini
     max_tokens: 4000
     temperature: 0.8  # Higher creativity for comedy
-
-# Container Comedy Central Toolkit
-toolset:
-  - type: mcp
-    ref: docker:duckduckgo
-    tools: ["search"]
-
-# Built-in joke database (sample entries)
-memory:
-  startup_jokes:
-    - "Welcome to Container Comedy Central! I'm like a Docker image - lightweight, portable, and occasionally I crash unexpectedly!"
-    - "Why did the container go to therapy? It had too many layers and couldn't commit!"
-    - "I'm running in a comedy container with resource limits - unlimited dad jokes but constrained by good taste!"
-  
-  pain_point_responses:
-    outages: "Oh, cloud outages? That's when the 'cloud' becomes more like a 'fog' - you can't see anything and everyone's confused!"
-    yaml: "YAML is like poetry for computers - beautiful when it works, incomprehensible when it doesn't, and always sensitive about spacing!"
-    networking: "Container networking: where 'localhost' becomes 'where-the-heck-is-host' and IP addresses are more elusive than unicorns!"
-    permissions: "Permission denied? That's just the computer's way of saying 'talk to the manager' - and the manager is root!"
-
-# Performance configurations
-config:
-  comedy_timing: "responsive"  # Quick wit for real-time debugging humor
-  audience_level: "technical"   # Assumes familiarity with container concepts
-  humor_safety: "work_appropriate"  # Family-friendly tech humor, pg-13
-  callback_frequency: "high"   # Lots of running gags and references
