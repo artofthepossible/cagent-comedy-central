@@ -20,11 +20,10 @@ jobs:
           curl -L -o cagent https://github.com/docker/cagent/releases/latest/download/cagent-linux-amd64
           chmod +x cagent
           
-          # Run cagent with proper flags
+          # Run cagent with proper flags and redirect output
           ./cagent run container-nerdy-central.yaml \
             "Run all tests and report results" \
-            --debug \
-            --output test-report.txt
+            --debug > test-report.txt 2>&1
       
       - name: Upload test results
         if: always()
